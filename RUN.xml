@@ -1,0 +1,17 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="RegressionSuite">
+
+<listeners>
+    <listener class-name="Utilities.TestListener"/>
+    <listener class-name="Utilities.AnnotationTransformer"/>
+</listeners>
+
+    <test name="LoginTests_chrome" parallel="classes" thread-count="1">
+      <parameter name="platform" value="android"/>
+        <classes>
+            <class name="Tests.LoginTest"/>
+        </classes>
+    </test>
+
+</suite>
