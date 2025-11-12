@@ -48,15 +48,17 @@ public class TestBase {
             } catch (MalformedURLException e) {
                 throw new RuntimeException(e);
             }
-            String fileSeparator= File.separator;
+            String fileSeparator = File.separator;
+            String ProjectPath = System.getProperty("user.dir");
+
 
             // Step-2
             UiAutomator2Options options = new UiAutomator2Options();
-            options.setApp("C:"+fileSeparator+"Users"+fileSeparator+"enghi"+fileSeparator+"IdeaProjects"+fileSeparator+"Appium-Testing"+fileSeparator+"src"+fileSeparator+"main"+fileSeparator+"resources"+fileSeparator+"mda-2.2.0-25.apk");
+            options.setApp(ProjectPath+fileSeparator+"src"+fileSeparator+"main"+fileSeparator+"resources"+fileSeparator+"mda-2.2.0-25.apk");
             options.setAppPackage("com.saucelabs.mydemoapp.android");
             options.setAppActivity("com.saucelabs.mydemoapp.android.view.activities.SplashActivity");
             options.setDeviceName("07574251AS009058");
-            options.setUdid("07574251AS009058");
+            options.setUdid("emulator-5554");
             options.setPlatformName("Android");
             options.setAutomationName("UiAutomator2");
             options.setNewCommandTimeout(Duration.ofSeconds(60));
